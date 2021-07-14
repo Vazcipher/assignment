@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 30px;">
+            <div class="col"></div>
+            <div class="col">
+                <div class="input-group mb-3">
+                   <h3> Average mark of a student</h3>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="sub1" placeholder="Mark of Maths">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="sub2" placeholder="Mark of Physics">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="sub3" placeholder="Mark of Chemistry">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="sub4" placeholder="Mark of Biology">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="sub5" placeholder="Mark of English">
+                </div>
+                <div class="input-group mb-3">
+                    <button onclick="avarage()" class="btn btn-success">Submit</button>
+                </div>
+                <div class="input-group mb-3">
+                    <h2 id="result"></h2>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+<script>
+    function avarage(){
+        let nme=parseInt(name.value);
+        let maths=parseInt(sub1.value);
+        let physics=parseInt(sub2.value);
+        let biology=parseInt(sub3.value);
+        let chemistry=parseInt(sub4.value);
+        let english=parseInt(sub5.value);
+
+        let subjects={nme,maths,physics,biology,chemistry,english}
+        console.log(subjects);
+        let total=maths+physics+biology+chemistry+english
+        let avg=parseFloat(total/500*100)
+        console.log(avg);
+        
+        if(avg>=80){
+            result.innerHTML=`Avarage: ${avg}<br>Grade: A`
+        }
+        else if(avg>=70 & avg<80){
+            result.innerHTML=`Avarage: ${avg}<br>Grade: B`
+        }
+        else if(avg>=60 & avg<70){
+            result.innerHTML=`Avarage: ${avg}<br>Grade: C`
+        }
+        else if(avg>=50 & avg<60){
+            result.innerHTML=`Avarage: ${avg}<br>Grade: D`
+        }
+        else{
+            result.innerHTML=`Failed`
+        }
+        
+    }
+</script>
+</html>
